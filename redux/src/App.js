@@ -22,5 +22,5 @@ function App() {
   );
 }
 
-// hiir
+// hiire
 export default App;
