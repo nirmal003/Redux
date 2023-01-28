@@ -22,5 +22,4 @@ function App() {
   );
 }
 
-// hiire
 export default App;
