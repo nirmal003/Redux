@@ -1,21 +1,22 @@
+import { nanoid } from "nanoid";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { signUp } from "../Actions/Register";
+import { useDispatch, useSelector } from "react-redux";
+import { logIn } from "../Actions/Login";
 
 function Register() {
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+
+  const state = useSelector((state) => state.userReducer);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const data = { firstName, lastName, email, password };
+    const data = { firstName, lastName, id: nanoid() };
 
-    dispatch(signUp(data));
+    dispatch(logIn(data));
 
     console.log(data);
   };
@@ -28,6 +29,7 @@ function Register() {
           name="firstName"
           placeholder="Enter your firstName"
           onChange={(e) => setfirstName(e.target.value)}
+          //   value={firstName}
           required
         />
         <input
@@ -35,20 +37,7 @@ function Register() {
           name="lastName"
           placeholder="Enter your lastName"
           onChange={(e) => setlastName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-          onChange={(e) => setPassword(e.target.value)}
+          //   value={lastName}
           required
         />
         <input type="submit" />
