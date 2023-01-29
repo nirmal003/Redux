@@ -12,7 +12,7 @@ import Reducers from "./Reducers";
 
 const store = createStore(Reducers, compose(applyMiddleware(thunk)));
 
-console.log(store);
+// console.log(store);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
