@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signUp } from "../Actions/Register";
 
 function Register() {
   const [firstName, setfirstName] = useState("");
@@ -6,10 +8,15 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { firstName, lastName, email, password };
-    console.log(data);
+
+    dispatch(signUp(data));
+
+    // console.log(data);
   };
 
   return (
