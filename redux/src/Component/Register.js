@@ -1,12 +1,12 @@
 import React from "react";
 
 function Register() {
-  const handleOnSubmoit = () => {
+  const handleOnSubmit = () => {
     console.log("ji");
   };
   return (
     <div>
-      <form onSubmit={handleOnSubmoit} action="">
+      <form onSubmit={handleOnSubmit} action="">
         <input
           type="text"
           name="firstName"
