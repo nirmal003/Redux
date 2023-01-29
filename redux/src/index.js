@@ -11,6 +11,8 @@ import reportWebVitals from "./reportWebVitals";
 
 const store = createStore(Reducers, compose(applyMiddleware(thunk)));
 
+console.log(store);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
