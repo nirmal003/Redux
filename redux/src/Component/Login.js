@@ -18,6 +18,9 @@ function Register() {
 
     dispatch(logIn(data));
 
+    setfirstName("");
+    setlastName("");
+
     console.log(data);
   };
 
@@ -28,16 +31,16 @@ function Register() {
           type="text"
           name="firstName"
           placeholder="Enter your firstName"
+          value={firstName}
           onChange={(e) => setfirstName(e.target.value)}
-          //   value={firstName}
           required
         />
         <input
           type="text"
           name="lastName"
           placeholder="Enter your lastName"
+          value={lastName}
           onChange={(e) => setlastName(e.target.value)}
-          //   value={lastName}
           required
         />
         <input type="submit" />
